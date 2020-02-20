@@ -1,0 +1,20 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "identificador",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "query",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20190215153654",
+    "entityTableName": "personalizada",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false
+}

@@ -1,0 +1,157 @@
+<style type="text/css">
+    .panel-body{
+    padding: 0 20px;
+}
+
+@media (max-width: 500px){
+    .col-xl-6, .col-lg-6 {
+        margin-bottom: 40px;
+    }
+}
+</style>
+
+<div>
+    <h2 class="text-center">Qualitativas</h2>
+    <jhi-alert></jhi-alert>
+
+    <br/>
+
+    <br>
+
+    <h2>Busca por CPF</h2>
+    <br>
+    <form>
+        <div class="form-group">
+            <input ng-model="buscacpf" class="form-control" id="cpfinput" aria-describedby="emailHelp" placeholder="Digite o CPF">
+            <small id="emailHelp" class="form-text text-muted"></small>
+        </div>
+
+        <button type="submit" class="btn btn-primary" ng-click="buscar()">Buscar</button>
+    </form>
+
+    <br>
+
+    <h3 ng-if="buscoucpf">
+        <br>
+        <span class="glyphicon glyphicon-user"></span>{{indiciado}}</h3>
+    <br>
+
+    <div style="width:100%" ng-if="buscoucpf">
+        <div class="row">
+            <div class="col-md-6">
+                <h4>Indiciamentos</h4>
+                <br>
+                <table class="jh-table table table-striped">
+                    <thead>
+                    <tr>
+                        <th>Número do Processo</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>{{indiciamento}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-md-6">
+                <h4>Condenações</h4>
+                <br>
+                <table class="jh-table table table-striped">
+                    <thead>
+                    <tr>
+                        <th>Número da Execução Penal</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>{{penal}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+    <h2>Busca por Processo</h2>
+    <br>
+    <form>
+        <div class="form-group">
+
+            <input ng-model="codigoprocesso" class="form-control" id="cpfinput" aria-describedby="emailHelp" placeholder="Digite o Número do Processo">
+            <small id="emailHelp" class="form-text text-muted"></small>
+        </div>
+
+        <button type="submit" class="btn btn-primary" ng-click="buscarprocesso()">Buscar</button>
+    </form>
+
+    
+    <br>
+
+    <div ng-if="buscaprocesso==true">
+        <div class="row">
+            <div class="col-md-12">
+                <br>
+                <h4>Envolvidos</h4>
+                <br>
+                <div class="table-responsive">
+                <table class="jh-table table table-striped">
+                    <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>CPF</th>
+                        <th>Condenação</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>{{nome}}</td>
+                        <td>{{cpf}}</td>
+                        <td>{{condenacao}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span>ID</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="qualitativas in vm.qualitativas track by qualitativas.id">
+                    <td><a ui-sref="qualitativas-detail({id:qualitativas.id})">{{qualitativas.id}}</a></td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="qualitativas-detail({id:qualitativas.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="qualitativas.edit({id:qualitativas.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="qualitativas.delete({id:qualitativas.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div> -->
+</div>
